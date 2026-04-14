@@ -28,7 +28,9 @@ export function Hero() {
         </span>
 
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-          {hero.heading}
+          Pressure Washing in
+          <br className="hidden md:block" />
+          {" "}Mundelein, IL
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
