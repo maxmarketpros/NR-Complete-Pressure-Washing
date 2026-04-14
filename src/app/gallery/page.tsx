@@ -15,39 +15,34 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/gallery",
 });
 
-// Composite images (single frame with both before & after)
-const compositeImages = [
-  { key: "gallery-ba-1", label: "Paver Cleaning & Color Restoration" },
-  { key: "gallery-ba-2", label: "House Washing — Window & Siding" },
-];
-
 // Side-by-side before/after pairs
 const beforeAfterPairs = [
   {
     before: "gallery-pair-1-before",
     after: "gallery-pair-1-after",
-    label: "Brick Walkway Cleaning",
   },
   {
     before: "gallery-pair-2-before",
     after: "gallery-pair-2-after",
-    label: "Paver Walkway Restoration",
   },
   {
     before: "gallery-pair-3-before",
     after: "gallery-pair-3-after",
-    label: "Masonry Wall — Algae Removal",
   },
   {
     before: "gallery-pair-4-before",
     after: "gallery-pair-4-after",
-    label: "Retaining Wall Cleaning",
   },
   {
     before: "gallery-pair-5-before",
     after: "gallery-pair-5-after",
-    label: "Surface Cleaning & Restoration",
   },
+];
+
+// Composite images (single frame with both before & after)
+const compositeImages = [
+  { key: "gallery-ba-1", label: "Paver Cleaning & Color Restoration" },
+  { key: "gallery-ba-2", label: "House Washing — Window & Siding" },
 ];
 
 // Standalone project photos (no matching pair)
@@ -90,83 +85,43 @@ export default function GalleryPage() {
         }}
       />
 
-      {/* Composite Before & After Images */}
-      <section className="section-padding">
-        <Container>
-          <SectionHeading
-            eyebrow="Before & After"
-            heading="Dramatic Pressure Washing Transformations in Mundelein, IL"
-            subtitle="Every image below shows real results from NR Complete Pressure Washing projects. See the difference 30+ years of experience makes."
-            align="center"
-          />
-
-          {/* Composite images (single frame B&A) */}
-          <div className="grid gap-8 md:grid-cols-2">
-            {compositeImages.map((img) => (
-              <div
-                key={img.key}
-                className="overflow-hidden rounded-2xl border border-border bg-white shadow-card"
-              >
-                <ImageSlot
-                  imageKey={img.key}
-                  natural
-                  className="w-full"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="p-4">
-                  <p className="text-sm font-semibold text-foreground">
-                    {img.label}
-                  </p>
-                  <p className="text-xs text-muted">Mundelein, IL</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* Side-by-Side Before & After Pairs */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding">
         <Container>
           <SectionHeading
             eyebrow="Side by Side"
             heading="Before & After Comparisons"
-            subtitle="Swipe between our before and after photos to see the full transformation on each project."
+            subtitle="See the full transformation on each project — before on the left, after on the right."
             align="center"
           />
 
           <div className="space-y-12">
             {beforeAfterPairs.map((pair, i) => (
-              <div key={i}>
-                <h3 className="mb-4 text-center text-lg font-bold text-foreground">
-                  {pair.label}
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
-                    <ImageSlot
-                      imageKey={pair.before}
-                      natural
-                      className="w-full"
-                      sizes="(max-width: 768px) 50vw, 40vw"
-                    />
-                    <div className="bg-red-50 px-4 py-2 text-center">
-                      <span className="text-xs font-bold uppercase tracking-wider text-red-600">
-                        Before
-                      </span>
-                    </div>
+              <div key={i} className="grid grid-cols-2 gap-4">
+                <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+                  <ImageSlot
+                    imageKey={pair.before}
+                    natural
+                    className="w-full"
+                    sizes="(max-width: 768px) 50vw, 40vw"
+                  />
+                  <div className="bg-red-50 px-4 py-2 text-center">
+                    <span className="text-xs font-bold uppercase tracking-wider text-red-600">
+                      Before
+                    </span>
                   </div>
-                  <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
-                    <ImageSlot
-                      imageKey={pair.after}
-                      natural
-                      className="w-full"
-                      sizes="(max-width: 768px) 50vw, 40vw"
-                    />
-                    <div className="bg-green-50 px-4 py-2 text-center">
-                      <span className="text-xs font-bold uppercase tracking-wider text-green-600">
-                        After
-                      </span>
-                    </div>
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+                  <ImageSlot
+                    imageKey={pair.after}
+                    natural
+                    className="w-full"
+                    sizes="(max-width: 768px) 50vw, 40vw"
+                  />
+                  <div className="bg-green-50 px-4 py-2 text-center">
+                    <span className="text-xs font-bold uppercase tracking-wider text-green-600">
+                      After
+                    </span>
                   </div>
                 </div>
               </div>
@@ -176,7 +131,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Additional Project Photos */}
-      <section className="section-padding">
+      <section className="section-padding bg-surface">
         <Container>
           <SectionHeading
             eyebrow="Project Photos"
@@ -196,6 +151,40 @@ export default function GalleryPage() {
                   className="w-full"
                   sizes="(max-width: 640px) 50vw, 33vw"
                 />
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Composite Before & After Images */}
+      <section className="section-padding">
+        <Container>
+          <SectionHeading
+            eyebrow="Before & After"
+            heading="Dramatic Pressure Washing Transformations in Mundelein, IL"
+            subtitle="Every image below shows real results from NR Complete Pressure Washing projects. See the difference 30+ years of experience makes."
+            align="center"
+          />
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {compositeImages.map((img) => (
+              <div
+                key={img.key}
+                className="overflow-hidden rounded-2xl border border-border bg-white shadow-card"
+              >
+                <ImageSlot
+                  imageKey={img.key}
+                  natural
+                  className="w-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="p-4">
+                  <p className="text-sm font-semibold text-foreground">
+                    {img.label}
+                  </p>
+                  <p className="text-xs text-muted">Mundelein, IL</p>
+                </div>
               </div>
             ))}
           </div>
