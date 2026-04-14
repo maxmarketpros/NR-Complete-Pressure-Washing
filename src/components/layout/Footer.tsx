@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
@@ -11,11 +12,17 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-white">
       <Container>
-        <div className="grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="text-xl font-bold">
-              {siteConfig.name}
+          <div className="md:col-span-2 lg:col-span-1">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.png"
+                alt={siteConfig.name}
+                width={180}
+                height={52}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               {siteConfig.description}

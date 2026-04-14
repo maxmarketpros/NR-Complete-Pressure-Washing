@@ -31,14 +31,14 @@ export default function ContactPage() {
 
       <PageHero
         heading="Contact Us"
-        subtitle="Ready to start your project? Get in touch and let's discuss how we can help."
+        subtitle="Ready for a cleaner property? Get in touch with NR Complete Pressure Washing for a free estimate in Mundelein, IL."
         imageKey="contact-hero"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact" },
         ]}
         primaryCta={{ label: "Get a Quote", href: "#quote" }}
-        secondaryCta={{ label: "Call (555) 123-4567", href: "tel:+15551234567" }}
+        secondaryCta={{ label: "Call (941) 280-9119", href: "tel:+19412809119" }}
       />
 
       <QuoteSection id="quote" />

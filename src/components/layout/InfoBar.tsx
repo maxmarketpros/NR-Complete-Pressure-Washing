@@ -9,7 +9,7 @@ export function InfoBar() {
         <div className="flex flex-col items-center justify-between gap-3 py-3.5 text-sm md:flex-row md:gap-6">
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-primary-200" />
-            <span>{businessConfig.address.full}</span>
+            <span>Serving Mundelein, IL &amp; Surrounding Areas</span>
           </div>
           <div className="hidden h-4 w-px bg-white/20 md:block" />
           <div className="flex items-center gap-2">

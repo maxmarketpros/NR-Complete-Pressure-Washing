@@ -6,17 +6,35 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/config/services";
 import { businessConfig } from "@/config/business";
 import { homepageContent } from "@/config/homepage";
+import { cn } from "@/lib/utils";
 
-export function ServiceGrid() {
+interface ServiceGridProps {
+  eyebrow?: string;
+  heading?: string;
+  subtitle?: string;
+  bgColor?: "white" | "surface";
+}
+
+export function ServiceGrid({
+  eyebrow,
+  heading,
+  subtitle,
+  bgColor = "white",
+}: ServiceGridProps = {}) {
   const { services: content } = homepageContent;
 
   return (
-    <section className="section-padding">
+    <section
+      className={cn(
+        "section-padding",
+        bgColor === "surface" && "bg-surface"
+      )}
+    >
       <Container>
         <SectionHeading
-          eyebrow={content.eyebrow}
-          heading={content.heading}
-          subtitle={content.subtitle}
+          eyebrow={eyebrow || content.eyebrow}
+          heading={heading || content.heading}
+          subtitle={subtitle || content.subtitle}
           align="center"
         />
 

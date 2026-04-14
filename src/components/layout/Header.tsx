@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -45,14 +46,18 @@ export function Header() {
       <Container>
         <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className={cn(
-              "text-xl font-bold tracking-tight transition-colors",
-              scrolled || mobileOpen ? "text-foreground" : "text-white"
-            )}
-          >
-            {siteConfig.name}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt={siteConfig.name}
+              width={180}
+              height={52}
+              className={cn(
+                "h-10 w-auto transition-all md:h-12",
+                scrolled || mobileOpen ? "" : "brightness-0 invert"
+              )}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -78,7 +83,7 @@ export function Header() {
                     </button>
                     <div
                       className={cn(
-                        "absolute top-full left-0 min-w-[200px] rounded-xl bg-white py-2 shadow-card-hover transition-all duration-200",
+                        "absolute top-full left-0 min-w-[240px] max-h-[70vh] overflow-y-auto rounded-xl bg-white py-2 shadow-card-hover transition-all duration-200",
                         openDropdown === item.label
                           ? "visible translate-y-0 opacity-100"
                           : "invisible -translate-y-2 opacity-0"

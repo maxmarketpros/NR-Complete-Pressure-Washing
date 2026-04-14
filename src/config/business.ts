@@ -1,80 +1,72 @@
 export const businessConfig = {
-  phone: "(555) 123-4567",
-  phoneRaw: "+15551234567",
-  email: "info@premierservices.com",
+  phone: "(941) 280-9119",
+  phoneRaw: "+19412809119",
+  email: "nrcompletepressurewashing@gmail.com",
   address: {
-    street: "1234 Main Street",
-    city: "Springfield",
+    street: "",
+    city: "Mundelein",
     state: "IL",
-    zip: "62701",
-    full: "1234 Main Street, Springfield, IL 62701",
+    zip: "60060",
+    full: "Mundelein, IL 60060",
   },
   hours: {
-    display: "Mon-Sat: 8 AM - 6 PM",
+    display: "Mon-Sat: 7 AM - 5 PM",
     structured: [
-      { days: "Mo-Sa", opens: "08:00", closes: "18:00" },
+      { days: "Mo-Sa", opens: "07:00", closes: "17:00" },
     ],
   },
 
   // ===== SERVICE AREAS =====
-  // Primary list used in footer, structured data, etc.
   serviceAreas: [
-    "Springfield",
-    "Shelbyville",
-    "Capital City",
-    "Ogdenville",
-    "North Haverbrook",
+    "Mundelein",
+    "Libertyville",
+    "Vernon Hills",
+    "Lake County",
+    "Grayslake",
+    "Wauconda",
+    "Arlington Heights",
+    "Lake Zurich",
+    "Buffalo Grove",
+    "Long Grove",
   ],
 
-  // Expanded city list for the Service Areas section on the homepage.
-  // Each city can optionally link to a dedicated area page in the future.
   serviceAreaCities: [
-    { name: "Springfield", href: "" },
-    { name: "Shelbyville", href: "" },
-    { name: "Capital City", href: "" },
-    { name: "Ogdenville", href: "" },
-    { name: "North Haverbrook", href: "" },
-    { name: "Cypress Creek", href: "" },
-    { name: "Brockway", href: "" },
-    { name: "East Springfield", href: "" },
-    { name: "West Springfield", href: "" },
-    { name: "Shelbyville Heights", href: "" },
-    { name: "Springfield Junction", href: "" },
-    { name: "Waverly", href: "" },
+    { name: "Mundelein, IL", href: "/areas/mundelein-il" },
+    { name: "Libertyville, IL", href: "/areas/libertyville-il" },
+    { name: "Vernon Hills, IL", href: "/areas/vernon-hills-il" },
+    { name: "Lake County, IL", href: "/areas/lake-county-il" },
+    { name: "Grayslake, IL", href: "/areas/grayslake-il" },
+    { name: "Wauconda, IL", href: "/areas/wauconda-il" },
+    { name: "Arlington Heights, IL", href: "/areas/arlington-heights-il" },
+    { name: "Lake Zurich, IL", href: "/areas/lake-zurich-il" },
+    { name: "Buffalo Grove, IL", href: "/areas/buffalo-grove-il" },
+    { name: "Long Grove, IL", href: "/areas/long-grove-il" },
   ],
 
-  // Service areas section content
-  serviceAreasHeading: "Serving Springfield & Central Illinois",
+  serviceAreasHeading: "Serving Mundelein & the Greater Chicago Suburbs",
   serviceAreasSubtitle:
-    "and surrounding areas including Shelbyville, Capital City, and the greater metro region.",
+    "and surrounding areas including Libertyville, Vernon Hills, Arlington Heights, Lake Zurich, and all of Lake County.",
 
   // ===== MAP EMBED =====
-  // If you have a Google Business Profile, paste the full embed src URL here.
-  // To get it: Google Maps → search your business → Share → Embed a map → copy the src="" value
-  // If left empty, falls back to a generic map centered on the business address city.
   googleBusinessMapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.355408359939!2d-117.85053459999999!3d33.6738603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce7a447c59297%3A0x47ae50923ef7bc34!2sMax%20Market%20Pros!5e0!3m2!1sen!2sus!4v1775504357479!5m2!1sen!2sus",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47241.36539505166!2d-88.0033286!3d42.266027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45117625e73411fd%3A0xb5ce4e7c3f1e7e3a!2sNR%20Complete%20Pressure%20Washing!5e0!3m2!1sen!2sus!4v1776191292010!5m2!1sen!2sus",
 
   // ===== FORM EMBED =====
-  // Paste your iframe embed URL here (e.g. from Jobber, HouseCall Pro, GoHighLevel, Jotform, etc.)
-  // This is used on the contact page and the "Get a Quote" section across all pages.
-  // Leave empty to show a styled placeholder.
   formEmbedUrl: "",
   formEmbedHeight: "600px",
 
-  coordinates: { lat: 39.7817, lng: -89.6501 },
-  yearEstablished: 2009,
-  yearsExperience: "15+",
-  projectsCompleted: "250+",
-  ownerName: "John Smith",
+  coordinates: { lat: 42.2631, lng: -87.984 },
+  yearEstablished: 1994,
+  yearsExperience: "30+",
+  projectsCompleted: "500+",
+  ownerName: "NR Complete Pressure Washing",
 } as const;
 
-// Helper: returns the map embed URL — Google Business embed if set, otherwise a generic city map
+// Helper: returns the map embed URL
 export function getMapEmbedUrl(): string {
   if (businessConfig.googleBusinessMapEmbed) {
     return businessConfig.googleBusinessMapEmbed;
   }
-  // Fallback: generic Google Maps embed centered on the business city
   const { city, state } = businessConfig.address;
   return `https://www.google.com/maps/embed/v1/place?key=&q=${encodeURIComponent(`${city}, ${state}`)}`;
 }

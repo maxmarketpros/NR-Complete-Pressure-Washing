@@ -1,28 +1,26 @@
 import type { TestimonialItem } from "@/types";
 
+// PLACEHOLDER TESTIMONIALS — replace with real Google/Yelp reviews when available
 export const testimonials: TestimonialItem[] = [
   {
-    name: "Sarah Mitchell",
-    title: "Homeowner, Springfield",
+    name: "Michael R.",
+    title: "Homeowner, Mundelein",
     quote:
-      "From the first consultation to the final walkthrough, the entire experience was exceptional. They communicated every step of the way and the quality of work exceeded our expectations.",
+      "NR Complete Pressure Washing did an amazing job on our driveway and patio. Years of stains and algae buildup were gone in a few hours. The crew was professional, on time, and left everything looking brand new. Highly recommend them to anyone in the Mundelein area.",
     rating: 5,
-    image: "testimonial-1",
   },
   {
-    name: "James Rodriguez",
-    title: "Property Owner, Shelbyville",
+    name: "Jennifer K.",
+    title: "Homeowner, Libertyville",
     quote:
-      "I've worked with several companies over the years, but none have matched this level of professionalism. The project was completed on time, on budget, and the attention to detail was incredible.",
+      "We hired them for a full house wash and the results were incredible. Our vinyl siding looks like the day it was installed. They were careful around our landscaping and the price was very fair. Will definitely be calling them back every year.",
     rating: 5,
-    image: "testimonial-2",
   },
   {
-    name: "Karen Thompson",
-    title: "Homeowner, Capital City",
+    name: "David S.",
+    title: "Property Manager, Vernon Hills",
     quote:
-      "What sets them apart is the transparency. We knew exactly where every dollar was going and the owner was personally involved throughout the entire project. That kind of accountability is rare.",
+      "I manage several commercial properties and NR Complete handles all of our exterior cleaning. Their attention to detail and reliability are unmatched. They show up when they say they will, and the results speak for themselves. 30 years of experience really shows.",
     rating: 5,
-    image: "testimonial-3",
   },
 ];

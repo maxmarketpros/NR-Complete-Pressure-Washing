@@ -1,14 +1,14 @@
 import type { StatItem } from "@/types";
 
 export const heroStats: StatItem[] = [
-  { value: "15+", label: "Years Exp." },
-  { value: "250+", label: "Happy Clients" },
-  { value: "100%", label: "Owner Led" },
+  { value: "30+", label: "Years Exp." },
+  { value: "500+", label: "Happy Clients" },
+  { value: "100%", label: "Satisfaction" },
 ];
 
 export const aboutStats: StatItem[] = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "250+", label: "Projects Completed" },
+  { value: "30+", label: "Years of Experience" },
+  { value: "500+", label: "Properties Cleaned" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "50+", label: "5-Star Reviews" },
+  { value: "5-Star", label: "Google Rated" },
 ];

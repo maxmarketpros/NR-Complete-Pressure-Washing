@@ -58,11 +58,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   const featureListItems = service.detailImages.map((imgKey, i) => ({
-    title: i === 0 ? "Quality You Can See" : "Results That Last",
+    title: i === 0 ? "Professional Results You Can See" : "Clean That Lasts",
     description:
       i === 0
-        ? "Every project showcases our commitment to precision and craftsmanship. We take pride in delivering work that stands out for its quality and attention to detail."
-        : "Our work is built to last. We use premium materials and proven techniques to ensure your investment delivers value for years to come.",
+        ? "Every property we clean showcases our commitment to quality and attention to detail. With 30+ years of experience, we deliver pressure washing results that speak for themselves."
+        : "Our cleaning methods go beyond surface-level results. We use the right techniques and solutions for each surface to ensure your property stays cleaner longer.",
     imageKey: imgKey,
   }));
 

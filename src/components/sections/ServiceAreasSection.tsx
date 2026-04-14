@@ -43,20 +43,13 @@ export function ServiceAreasSection({ className }: ServiceAreasSectionProps) {
             <div className="grid grid-cols-2 gap-2">
               {cities.map((city, i) => (
                 <div key={i}>
-                  {city.href ? (
-                    <Link
-                      href={city.href}
-                      className="flex items-center justify-between rounded-lg bg-white/5 px-4 py-3 text-sm text-white/90 transition-colors hover:bg-white/15"
-                    >
-                      <span>{city.name}</span>
-                      <ChevronRight className="h-4 w-4 text-white/40" />
-                    </Link>
-                  ) : (
-                    <div className="flex items-center justify-between rounded-lg bg-white/5 px-4 py-3 text-sm text-white/90">
-                      <span>{city.name}</span>
-                      <ChevronRight className="h-4 w-4 text-white/40" />
-                    </div>
-                  )}
+                  <Link
+                    href={city.href || "/areas"}
+                    className="flex items-center justify-between rounded-lg bg-white/5 px-4 py-3 text-sm text-white/90 transition-colors hover:bg-white/15"
+                  >
+                    <span>{city.name}</span>
+                    <ChevronRight className="h-4 w-4 text-white/40" />
+                  </Link>
                 </div>
               ))}
             </div>

@@ -1,114 +1,295 @@
 import type { ImageSlotConfig } from "@/types";
 
-// ===== IMAGE MANIFEST =====
-// Every image on the site has a named slot.
-// To assign real images: replace the src path and update alt text.
-// focalPoint: { x: 0-1, y: 0-1 } controls object-position (default: center/center)
-//
-// FUTURE WORKFLOW:
-// 1. Add client images to /public/images/
-// 2. Update this manifest to point each slot to the right file
-// 3. Claude can analyze images and recommend slot assignments based on composition
-
 export const imageManifest: Record<string, ImageSlotConfig> = {
   // ===== HOMEPAGE =====
   "hero-home": {
     src: "/images/hero-home.jpg",
-    alt: "Professional service work showcasing quality craftsmanship",
+    alt: "Professional pressure washing service in Mundelein, IL — NR Complete Pressure Washing",
     width: 1920,
     height: 1080,
     focalPoint: { x: 0.5, y: 0.4 },
   },
   "about-preview": {
     src: "/images/about-preview.jpg",
-    alt: "Quality workmanship on a recent project",
+    alt: "NR Complete Pressure Washing team serving Mundelein, IL",
     width: 800,
     height: 1000,
     focalPoint: { x: 0.5, y: 0.3 },
   },
   "standards-feature": {
     src: "/images/standards-feature.jpg",
-    alt: "Active project demonstrating our high standards",
+    alt: "Before and after pressure washing results showing quality craftsmanship in Mundelein, IL",
     width: 800,
     height: 1000,
     focalPoint: { x: 0.5, y: 0.4 },
   },
 
-  // ===== SERVICE CARDS =====
-  "service-1": {
-    src: "/images/service-1.jpg",
-    alt: "Service one project example",
+  // ===== PRESSURE WASHING =====
+  "service-pw": {
+    src: "/images/service-pw.jpg",
+    alt: "Professional pressure washing service in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-2": {
-    src: "/images/service-2.jpg",
-    alt: "Service two project example",
+  "service-pw-hero": {
+    src: "/images/service-pw-hero.jpg",
+    alt: "Driveway pressure washing in Mundelein, IL by NR Complete Pressure Washing",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-pw-detail-1": {
+    src: "/images/service-pw-detail-1.jpg",
+    alt: "Commercial pressure washing for sidewalks and parking areas in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-3": {
-    src: "/images/service-3.jpg",
-    alt: "Service three project example",
+  "service-pw-detail-2": {
+    src: "/images/service-pw-detail-2.jpg",
+    alt: "Concrete floor pressure washing results in Mundelein, IL",
     width: 800,
     height: 600,
   },
 
-  // ===== SERVICE DETAIL PAGES =====
-  "service-1-hero": {
-    src: "/images/service-1-hero.jpg",
-    alt: "Service one hero image",
+  // ===== HOUSE WASHING =====
+  "service-hw": {
+    src: "/images/service-hw.jpg",
+    alt: "House washing and soft wash service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-hw-hero": {
+    src: "/images/service-hw-hero.jpg",
+    alt: "Professional house washing in Mundelein, IL — safe soft wash for all siding types",
     width: 1920,
     height: 600,
     focalPoint: { x: 0.5, y: 0.4 },
   },
-  "service-1-detail-1": {
-    src: "/images/service-1-detail-1.jpg",
-    alt: "Service one detailed work example",
+  "service-hw-detail-1": {
+    src: "/images/service-hw-detail-1.jpg",
+    alt: "Brick and facade soft wash cleaning in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-1-detail-2": {
-    src: "/images/service-1-detail-2.jpg",
-    alt: "Service one completed project",
+  "service-hw-detail-2": {
+    src: "/images/service-hw-detail-2.jpg",
+    alt: "Before and after house washing results showing window and siding cleaning",
     width: 800,
     height: 600,
   },
-  "service-2-hero": {
-    src: "/images/service-2-hero.jpg",
-    alt: "Service two hero image",
+
+  // ===== CONCRETE CLEANING =====
+  "service-cc": {
+    src: "/images/service-cc.jpg",
+    alt: "Concrete cleaning service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-cc-hero": {
+    src: "/images/service-cc-hero.jpg",
+    alt: "Professional concrete cleaning in Mundelein, IL — driveways, sidewalks, and patios",
     width: 1920,
     height: 600,
     focalPoint: { x: 0.5, y: 0.4 },
   },
-  "service-2-detail-1": {
-    src: "/images/service-2-detail-1.jpg",
-    alt: "Service two detailed work example",
+  "service-cc-detail-1": {
+    src: "/images/service-cc-detail-1.jpg",
+    alt: "Concrete surface cleaning with professional equipment in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-2-detail-2": {
-    src: "/images/service-2-detail-2.jpg",
-    alt: "Service two completed project",
+  "service-cc-detail-2": {
+    src: "/images/service-cc-detail-2.jpg",
+    alt: "Driveway concrete cleaning results in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-3-hero": {
-    src: "/images/service-3-hero.jpg",
-    alt: "Service three hero image",
+
+  // ===== CONCRETE SEALING =====
+  "service-cs": {
+    src: "/images/service-cs.jpg",
+    alt: "Concrete sealing service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-cs-hero": {
+    src: "/images/service-cs-hero.jpg",
+    alt: "Professional concrete sealing in Mundelein, IL — protect driveways and patios",
     width: 1920,
     height: 600,
     focalPoint: { x: 0.5, y: 0.4 },
   },
-  "service-3-detail-1": {
-    src: "/images/service-3-detail-1.jpg",
-    alt: "Service three detailed work example",
+  "service-cs-detail-1": {
+    src: "/images/service-cs-detail-1.jpg",
+    alt: "Concrete surface preparation before sealing in Mundelein, IL",
     width: 800,
     height: 600,
   },
-  "service-3-detail-2": {
-    src: "/images/service-3-detail-2.jpg",
-    alt: "Service three completed project",
+  "service-cs-detail-2": {
+    src: "/images/service-cs-detail-2.jpg",
+    alt: "Sealed concrete driveway results in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== PAVER CLEANING =====
+  "service-pc": {
+    src: "/images/service-pc.jpg",
+    alt: "Paver cleaning service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-pc-hero": {
+    src: "/images/service-pc-hero.jpg",
+    alt: "Professional paver cleaning in Mundelein, IL — restore color and remove algae",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-pc-detail-1": {
+    src: "/images/service-pc-detail-1.jpg",
+    alt: "Before and after paver cleaning showing dramatic color restoration",
+    width: 800,
+    height: 600,
+  },
+  "service-pc-detail-2": {
+    src: "/images/service-pc-detail-2.jpg",
+    alt: "Brick paver cleaning results in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== PAVER SANDING =====
+  "service-ps": {
+    src: "/images/service-ps.jpg",
+    alt: "Paver sanding service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-ps-hero": {
+    src: "/images/service-ps-hero.jpg",
+    alt: "Professional paver sanding with polymeric sand in Mundelein, IL",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-ps-detail-1": {
+    src: "/images/service-ps-detail-1.jpg",
+    alt: "Paver joint detail showing clean sanding results",
+    width: 800,
+    height: 600,
+  },
+  "service-ps-detail-2": {
+    src: "/images/service-ps-detail-2.jpg",
+    alt: "Completed paver sanding with polymeric sand in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== PAVER SEALING =====
+  "service-psl": {
+    src: "/images/service-psl.jpg",
+    alt: "Paver sealing service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-psl-hero": {
+    src: "/images/service-psl-hero.jpg",
+    alt: "Professional paver sealing in Mundelein, IL — wet-look and natural finish options",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-psl-detail-1": {
+    src: "/images/service-psl-detail-1.jpg",
+    alt: "Sealed paver patio showing color enhancement in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-psl-detail-2": {
+    src: "/images/service-psl-detail-2.jpg",
+    alt: "Paver sealing results on outdoor living space",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== STUCCO CLEANING =====
+  "service-sc": {
+    src: "/images/service-sc.jpg",
+    alt: "Stucco cleaning service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-sc-hero": {
+    src: "/images/service-sc-hero.jpg",
+    alt: "Professional stucco cleaning in Mundelein, IL — safe soft wash method",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-sc-detail-1": {
+    src: "/images/service-sc-detail-1.jpg",
+    alt: "Stucco exterior soft wash cleaning in progress",
+    width: 800,
+    height: 600,
+  },
+  "service-sc-detail-2": {
+    src: "/images/service-sc-detail-2.jpg",
+    alt: "Before and after stucco cleaning showing algae removal",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== DECK & PATIO CLEANING =====
+  "service-dp": {
+    src: "/images/service-dp.jpg",
+    alt: "Deck and patio cleaning service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-dp-hero": {
+    src: "/images/service-dp-hero.jpg",
+    alt: "Professional deck cleaning in Mundelein, IL — wood and composite decks",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-dp-detail-1": {
+    src: "/images/service-dp-detail-1.jpg",
+    alt: "Restored residential deck and outdoor living space",
+    width: 800,
+    height: 600,
+  },
+  "service-dp-detail-2": {
+    src: "/images/service-dp-detail-2.jpg",
+    alt: "Wood deck cleaning results showing restored grain and color",
+    width: 800,
+    height: 600,
+  },
+
+  // ===== RETAINING WALL CLEANING =====
+  "service-rw": {
+    src: "/images/service-rw.jpg",
+    alt: "Retaining wall cleaning service in Mundelein, IL",
+    width: 800,
+    height: 600,
+  },
+  "service-rw-hero": {
+    src: "/images/service-rw-hero.jpg",
+    alt: "Professional retaining wall cleaning in Mundelein, IL — block, stone, and brick",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "service-rw-detail-1": {
+    src: "/images/service-rw-detail-1.jpg",
+    alt: "Before and after retaining wall cleaning showing moss and algae removal",
+    width: 800,
+    height: 600,
+  },
+  "service-rw-detail-2": {
+    src: "/images/service-rw-detail-2.jpg",
+    alt: "Brick retaining wall after professional cleaning in Mundelein, IL",
     width: 800,
     height: 600,
   },
@@ -116,21 +297,21 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
   // ===== ABOUT PAGE =====
   "about-hero": {
     src: "/images/about-hero.jpg",
-    alt: "Our team at work",
+    alt: "NR Complete Pressure Washing — professional exterior cleaning team",
     width: 1920,
     height: 600,
     focalPoint: { x: 0.5, y: 0.4 },
   },
   "about-story": {
     src: "/images/about-story.jpg",
-    alt: "Company founder leading a project on site",
+    alt: "Experienced pressure washing professional at work in Mundelein, IL",
     width: 800,
     height: 1000,
     focalPoint: { x: 0.5, y: 0.3 },
   },
   "about-team": {
     src: "/images/about-team.jpg",
-    alt: "Our experienced team",
+    alt: "NR Complete Pressure Washing team in Mundelein, IL",
     width: 800,
     height: 600,
   },
@@ -138,43 +319,154 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
   // ===== CONTACT PAGE =====
   "contact-hero": {
     src: "/images/contact-hero.jpg",
-    alt: "Get in touch with our team",
+    alt: "Contact NR Complete Pressure Washing in Mundelein, IL for a free estimate",
     width: 1920,
     height: 600,
     focalPoint: { x: 0.5, y: 0.4 },
   },
 
-  // ===== TESTIMONIALS =====
-  "testimonial-1": {
-    src: "/images/testimonial-1.jpg",
-    alt: "Client portrait",
-    width: 200,
-    height: 200,
+  // ===== GALLERY PAGE =====
+  "gallery-hero": {
+    src: "/images/gallery-hero.jpg",
+    alt: "Before and after pressure washing gallery — NR Complete Pressure Washing",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
   },
-  "testimonial-2": {
-    src: "/images/testimonial-2.jpg",
-    alt: "Client portrait",
-    width: 200,
-    height: 200,
+
+  // ===== SERVICE AREAS PAGE =====
+  "areas-hero": {
+    src: "/images/areas-hero.jpg",
+    alt: "NR Complete Pressure Washing service areas in Mundelein, IL and surrounding suburbs",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
   },
-  "testimonial-3": {
-    src: "/images/testimonial-3.jpg",
-    alt: "Client portrait",
-    width: 200,
-    height: 200,
+
+  // ===== FAQ PAGE =====
+  "faq-hero": {
+    src: "/images/faq-hero.jpg",
+    alt: "Frequently asked questions about pressure washing in Mundelein, IL",
+    width: 1920,
+    height: 600,
+    focalPoint: { x: 0.5, y: 0.4 },
+  },
+
+  // ===== GALLERY IMAGES =====
+  "gallery-ba-1": {
+    src: "/images/gallery-ba-1.jpg",
+    alt: "Before and after paver cleaning showing dramatic color restoration in Mundelein, IL",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-2": {
+    src: "/images/gallery-ba-2.jpg",
+    alt: "Before and after house washing showing window and siding cleaning results",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-3": {
+    src: "/images/gallery-ba-3.jpg",
+    alt: "Before and after driveway pressure washing in Mundelein, IL",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-4": {
+    src: "/images/gallery-ba-4.jpg",
+    alt: "Before and after house and garage exterior cleaning",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-5": {
+    src: "/images/gallery-ba-5.jpg",
+    alt: "Before and after brick paver restoration in Mundelein, IL",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-6": {
+    src: "/images/gallery-ba-6.jpg",
+    alt: "Before and after entry stairway cleaning showing algae removal",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-ba-7": {
+    src: "/images/gallery-ba-7.jpg",
+    alt: "Retaining wall cleaning progress showing half-cleaned transformation",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-1": {
+    src: "/images/gallery-client-1.jpg",
+    alt: "Deck board cleaning and restoration project in Mundelein, IL",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-2": {
+    src: "/images/gallery-client-2.jpg",
+    alt: "Building siding before pressure washing showing dirt and staining",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-3": {
+    src: "/images/gallery-client-3.jpg",
+    alt: "Exterior siding with algae growth before soft wash cleaning",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-4": {
+    src: "/images/gallery-client-4.jpg",
+    alt: "Concrete surface with moss growth before professional cleaning",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-5": {
+    src: "/images/gallery-client-5.jpg",
+    alt: "Concrete pad cleaning project in progress",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-6": {
+    src: "/images/gallery-client-6.jpg",
+    alt: "Detailed stone paver texture after professional cleaning",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-7": {
+    src: "/images/gallery-client-7.jpg",
+    alt: "Clean paver pattern detail showing restored color and joints",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-8": {
+    src: "/images/gallery-client-8.jpg",
+    alt: "Retaining wall before cleaning showing heavy algae growth",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-9": {
+    src: "/images/gallery-client-9.jpg",
+    alt: "Concrete walkway before pressure washing showing moss buildup",
+    width: 1200,
+    height: 800,
+  },
+  "gallery-client-10": {
+    src: "/images/gallery-client-10.jpg",
+    alt: "Concrete steps and walkway before professional cleaning",
+    width: 1200,
+    height: 800,
   },
 
   // ===== BRANDING =====
   logo: {
-    src: "/images/logo.svg",
-    alt: "Company logo",
-    width: 180,
-    height: 48,
+    src: "/images/logo.png",
+    alt: "NR Complete Pressure Washing logo",
+    width: 400,
+    height: 120,
   },
   "logo-white": {
-    src: "/images/logo-white.svg",
-    alt: "Company logo",
-    width: 180,
-    height: 48,
+    src: "/images/logo.png",
+    alt: "NR Complete Pressure Washing logo",
+    width: 400,
+    height: 120,
   },
 };

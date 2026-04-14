@@ -45,6 +45,8 @@ export function generateLocalBusinessSchema() {
       "@type": "City",
       name: area,
     })),
+    image: `${siteConfig.url}/images/logo.png`,
+    priceRange: "$$",
     sameAs: Object.values(siteConfig.social).filter(Boolean),
   };
 }

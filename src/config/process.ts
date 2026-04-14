@@ -3,30 +3,30 @@ import type { ProcessStep } from "@/types";
 export const processSteps: ProcessStep[] = [
   {
     step: 1,
-    title: "Consultation",
+    title: "Free Estimate",
     description:
-      "We start with a thorough discussion of your project goals, budget, and timeline. This is where we listen, assess, and begin building your custom plan.",
+      "Contact us by phone or online to schedule your free, no-obligation estimate. We assess your property and recommend the right cleaning approach for every surface.",
     icon: "MessageSquare",
   },
   {
     step: 2,
-    title: "Planning & Estimate",
+    title: "Custom Plan",
     description:
-      "You receive a detailed proposal with transparent line-item pricing, a clear project timeline, and a comprehensive scope of work — no surprises.",
+      "We develop a cleaning plan tailored to your property, selecting the right pressure levels, detergents, and techniques for each surface type to deliver safe, effective results.",
     icon: "FileText",
   },
   {
     step: 3,
-    title: "Execution",
+    title: "Professional Cleaning",
     description:
-      "Our team gets to work with daily coordination, quality checkpoints, and regular progress updates. We treat your project like our own.",
-    icon: "Hammer",
+      "Our experienced crew arrives on schedule with commercial-grade equipment and eco-friendly cleaning solutions. We work efficiently while protecting your landscaping and property.",
+    icon: "Droplets",
   },
   {
     step: 4,
     title: "Final Walkthrough",
     description:
-      "We don't consider a project done until you're completely satisfied. A thorough final inspection ensures every detail meets our exacting standards.",
+      "We inspect every cleaned surface with you to ensure complete satisfaction before we leave. If anything does not meet your expectations, we address it on the spot.",
     icon: "CheckCircle",
   },
 ];

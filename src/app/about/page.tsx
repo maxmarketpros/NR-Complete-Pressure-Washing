@@ -16,7 +16,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = generatePageMetadata({
   title: "About Us",
   description:
-    "Learn about our story, values, and the experience that drives our commitment to quality. Over 15 years of trusted service.",
+    "Learn about NR Complete Pressure Washing — over 30 years of professional pressure washing experience serving Mundelein, IL and surrounding Chicago suburbs.",
   path: "/about",
 });
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
         imageKey="about-hero"
         breadcrumbs={breadcrumbs}
         primaryCta={{ label: "Get a Quote", href: "/contact" }}
-        secondaryCta={{ label: "Call (555) 123-4567", href: "tel:+15551234567" }}
+        secondaryCta={{ label: "Call (941) 280-9119", href: "tel:+19412809119" }}
       />
 
       {/* Story Section */}
@@ -118,7 +118,7 @@ export default function AboutPage() {
       <ProcessGrid
         eyebrow="Our Process"
         heading="How Every Project Works"
-        subtitle="A proven four-step process refined over 15 years of delivering excellence."
+        subtitle="A proven four-step process refined over 30 years of delivering exceptional pressure washing results."
         primaryCta={{ label: "Get a Quote", href: "/contact" }}
       />
 
@@ -127,8 +127,8 @@ export default function AboutPage() {
 
       {/* CTA */}
       <CTASection
-        heading="Ready to Work With Us?"
-        text="Start with a free consultation. No pressure, no obligation — just an honest conversation about your project."
+        heading="Ready for a Cleaner Property?"
+        text="Start with a free estimate. No pressure, no obligation — just an honest assessment of your pressure washing needs in Mundelein, IL."
         primaryCta={{ label: "Get a Quote", href: "/contact" }}
         secondaryCta={{ label: "View Our Services", href: "/services" }}
       />

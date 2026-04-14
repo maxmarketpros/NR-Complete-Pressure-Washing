@@ -1,85 +1,85 @@
 export const homepageContent = {
   hero: {
-    heading: "Trusted Professional Services in Springfield, IL",
+    heading: "Pressure Washing in Mundelein, IL",
     subtitle:
-      "Premium quality work, transparent pricing, and full project accountability across Springfield and the surrounding region.",
-    primaryCta: { label: "Get a Quote", href: "/contact" },
-    secondaryCta: { label: "Call (555) 123-4567", href: "tel:+15551234567" },
+      "Professional pressure washing, house washing, concrete cleaning, and paver restoration for homes and businesses in Mundelein and the greater Chicago suburbs. 30+ years of experience. Free estimates.",
+    primaryCta: { label: "Get a Free Estimate", href: "/contact" },
+    secondaryCta: { label: "Call (941) 280-9119", href: "tel:+19412809119" },
   },
   aboutPreview: {
     eyebrow: "About Us",
     heading:
-      "Your Trusted Service Partner in Springfield and the Surrounding Region",
+      "Your Trusted Pressure Washing Professionals in Mundelein, IL",
     paragraph:
-      "We are a premium service company based in Springfield, Illinois. For more than 15 years, we have helped property owners across the region turn their vision into reality with meticulous craftsmanship and transparent communication.",
+      "NR Complete Pressure Washing is proud to provide top-notch pressure washing, house washing, gutter cleaning, concrete cleaning, paver cleaning, and hardscape cleaning for homeowners and business owners in Mundelein, IL and the surrounding Chicago suburbs. With 30+ years of experience and a commitment to unbeatable customer satisfaction, we deliver results you can see and feel.",
     bullets: [
       {
-        title: "Transparent Line-Item Pricing",
+        title: "30+ Years of Hands-On Experience",
         description:
-          "No hidden fees. You see exactly where your money goes before we start.",
+          "Decades of expertise cleaning every type of surface means we know exactly how to get the job done right.",
       },
       {
-        title: "Owner-Led Accountability",
+        title: "Free Estimates, No Pressure",
         description:
-          "We lead every project in person. Direct communication at every phase.",
+          "We provide honest, detailed estimates before any work begins. No hidden fees, no surprises.",
       },
       {
-        title: "Regional Expertise",
+        title: "Serving Mundelein & Surrounding Areas",
         description:
-          "Built for the local climate, codes, and conditions of our service area.",
+          "Proudly serving Lake County including Libertyville, Vernon Hills, Arlington Heights, and more.",
       },
     ],
     image: "about-preview",
-    badge: { value: "15+", label: "Years of Experience" },
+    badge: { value: "30+", label: "Years of Experience" },
   },
   services: {
     eyebrow: "Our Services",
-    heading: "What We Do",
+    heading: "Professional Pressure Washing Services in Mundelein, IL",
     subtitle:
-      "Comprehensive solutions tailored to your needs, delivered with precision and care.",
+      "From house washing and concrete cleaning to paver restoration and hardscape maintenance, we have the expertise and equipment to handle any exterior cleaning project.",
   },
   standards: {
     eyebrow: "Our Approach",
-    heading: "The Standard We Hold",
+    heading: "The NR Complete Standard of Quality",
     paragraphs: [
-      "Every project is held to a relentless standard of execution covering initial planning through final completion. This isn't just a marketing promise — it forms the daily operational backbone of every project we manage.",
-      "The quality of professional work is determined long before the finishing touches. It lives in the precision of the schedule, the coordination of complex tasks, and the rigorous oversight that only an owner-led team can guarantee.",
+      "Every property we clean is treated with the same level of care and attention to detail. Our team uses commercial-grade equipment, eco-friendly detergents, and surface-specific techniques to deliver outstanding results without risking damage to your property.",
+      "With over 30 years in the pressure washing industry, we have refined a process that consistently delivers clean, lasting results. From the initial assessment to the final walkthrough, every step is handled with professionalism and precision.",
     ],
     checklist: [
-      "Documented scope of work before every phase",
-      "Daily coordination with all team members",
-      "Quality-first sequencing and critical hold points",
-      "Clean, organized work sites maintained daily",
-      "Safety protocols enforced rigorously",
-      "Inspection readiness at every checkpoint",
-      "Transparent budget tracking and updates",
-      "Owner-present milestone walkthroughs",
+      "Surface-specific pressure and technique selection",
+      "Eco-friendly, biodegradable cleaning solutions",
+      "Pre-treatment of stains, algae, and mold",
+      "Protection of landscaping and surrounding areas",
+      "Commercial-grade equipment maintained daily",
+      "Thorough post-cleaning inspection",
+      "Same-day service available",
+      "Fully licensed, insured, and bonded",
     ],
     image: "standards-feature",
-    badge: { value: "250+", label: "Projects Delivered" },
+    badge: { value: "500+", label: "Properties Cleaned" },
   },
   process: {
     eyebrow: "Our Process",
     heading: "How We Work",
     subtitle:
-      "A proven process refined over 15 years to deliver exceptional results, every time.",
+      "A proven four-step process refined over 30 years to deliver exceptional pressure washing results every time.",
   },
   testimonials: {
     eyebrow: "Client Reviews",
     heading: "What Our Clients Say",
     subtitle:
-      "Don't just take our word for it. Here's what our clients have to say about working with us.",
+      "Hear from homeowners and business owners across Mundelein, IL who trust NR Complete Pressure Washing.",
   },
   faq: {
     eyebrow: "FAQ",
     heading: "Frequently Asked Questions",
     subtitle:
-      "Answers to common questions about our services, process, and what to expect.",
+      "Answers to common questions about our pressure washing services, process, and what to expect.",
   },
   cta: {
-    heading: "Ready to Start Your Project?",
-    text: "Schedule a free consultation today and discover why hundreds of clients trust us with their most important projects.",
-    primaryCta: { label: "Get a Quote", href: "/contact" },
-    secondaryCta: { label: "Call (555) 123-4567", href: "tel:+15551234567" },
+    heading: "Ready to Restore Your Property?",
+    text: "Schedule a free estimate today and see why hundreds of homeowners and business owners across Mundelein and the Chicago suburbs trust NR Complete Pressure Washing.",
+    primaryCta: { label: "Get a Free Estimate", href: "/contact" },
+    secondaryCta: { label: "Call (941) 280-9119", href: "tel:+19412809119" },
   },
 } as const;

@@ -10,7 +10,7 @@ import { generatePageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = generatePageMetadata({
   title: "Our Services",
   description:
-    "Explore our comprehensive range of professional services. From initial consultation to final completion, we deliver quality you can trust.",
+    "Explore our full range of professional pressure washing services in Mundelein, IL. From house washing and concrete cleaning to paver restoration, we deliver results you can see.",
   path: "/services",
 });
 
@@ -18,9 +18,9 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        heading="Our Services"
-        subtitle="Comprehensive solutions delivered with precision, transparency, and care."
-        imageKey="service-1-hero"
+        heading="Our Pressure Washing Services"
+        subtitle="Professional exterior cleaning solutions for homes and businesses in Mundelein, IL and surrounding areas."
+        imageKey="service-pw-hero"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services" },
@@ -39,7 +39,7 @@ export default function ServicesPage() {
 
       <CTASection
         heading="Not Sure Which Service You Need?"
-        text="Contact us for a free consultation. We'll assess your needs and recommend the best approach."
+        text="Contact NR Complete Pressure Washing for a free estimate. We will assess your property and recommend the right cleaning approach."
         primaryCta={{ label: "Get a Quote", href: "/contact" }}
       />
 

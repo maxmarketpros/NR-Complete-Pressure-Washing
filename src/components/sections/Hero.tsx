@@ -24,7 +24,7 @@ export function Hero() {
       {/* Content */}
       <Container className="relative z-10 py-32 text-center">
         <span className="mb-4 inline-block rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
-          Trusted Local Service Provider
+          Professional Pressure Washing — Mundelein, IL
         </span>
 
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
