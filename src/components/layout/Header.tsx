@@ -155,13 +155,9 @@ export function Header() {
       </Container>
 
       {/* Mobile Menu */}
+      {mobileOpen && (
       <div
-        className={cn(
-          "fixed top-20 left-0 right-0 bottom-0 z-50 overflow-y-auto border-t border-border bg-white transition-opacity duration-300 lg:hidden",
-          mobileOpen
-            ? "visible opacity-100"
-            : "invisible opacity-0 pointer-events-none"
-        )}
+        className="fixed left-0 right-0 top-20 z-[60] h-[calc(100dvh-5rem)] overflow-y-auto overflow-x-hidden border-t border-border bg-white lg:hidden"
       >
         <div className="flex flex-col gap-1 p-6">
           {mainNav.map((item) => (
@@ -226,6 +222,7 @@ export function Header() {
           </Button>
         </div>
       </div>
+      )}
     </header>
   );
 }
