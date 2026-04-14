@@ -15,40 +15,47 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/gallery",
 });
 
-// Before & after composites — only images that are actual B&A composites or
-// high-quality transformation shots. Low-res thumbnails removed.
-const beforeAfterImages = [
+// Composite images (single frame with both before & after)
+const compositeImages = [
+  { key: "gallery-ba-1", label: "Paver Cleaning & Color Restoration" },
+  { key: "gallery-ba-2", label: "House Washing — Window & Siding" },
+];
+
+// Side-by-side before/after pairs
+const beforeAfterPairs = [
   {
-    key: "gallery-ba-1",
-    label: "Paver Cleaning & Restoration",
+    before: "gallery-pair-1-before",
+    after: "gallery-pair-1-after",
+    label: "Brick Walkway Cleaning",
   },
   {
-    key: "gallery-ba-2",
-    label: "House Washing — Window & Siding",
+    before: "gallery-pair-2-before",
+    after: "gallery-pair-2-after",
+    label: "Paver Walkway Restoration",
   },
   {
-    key: "gallery-ba-5",
-    label: "Brick Paver Restoration",
+    before: "gallery-pair-3-before",
+    after: "gallery-pair-3-after",
+    label: "Masonry Wall — Algae Removal",
   },
   {
-    key: "gallery-ba-7",
+    before: "gallery-pair-4-before",
+    after: "gallery-pair-4-after",
     label: "Retaining Wall Cleaning",
   },
   {
-    key: "gallery-ba-6",
-    label: "Entry Stairway Cleaning",
+    before: "gallery-pair-5-before",
+    after: "gallery-pair-5-after",
+    label: "Surface Cleaning & Restoration",
   },
 ];
 
+// Standalone project photos (no matching pair)
 const projectImages = [
   "gallery-client-1",
-  "gallery-client-2",
-  "gallery-client-3",
   "gallery-client-4",
-  "gallery-client-5",
   "gallery-client-6",
   "gallery-client-7",
-  "gallery-client-8",
   "gallery-client-9",
   "gallery-client-10",
 ];
@@ -83,7 +90,7 @@ export default function GalleryPage() {
         }}
       />
 
-      {/* Before & After Section */}
+      {/* Composite Before & After Images */}
       <section className="section-padding">
         <Container>
           <SectionHeading
@@ -92,11 +99,13 @@ export default function GalleryPage() {
             subtitle="Every image below shows real results from NR Complete Pressure Washing projects. See the difference 30+ years of experience makes."
             align="center"
           />
-          <div className="columns-1 gap-8 space-y-8 md:columns-2">
-            {beforeAfterImages.map((img) => (
+
+          {/* Composite images (single frame B&A) */}
+          <div className="grid gap-8 md:grid-cols-2">
+            {compositeImages.map((img) => (
               <div
                 key={img.key}
-                className="break-inside-avoid overflow-hidden rounded-2xl border border-border bg-white shadow-card"
+                className="overflow-hidden rounded-2xl border border-border bg-white shadow-card"
               >
                 <ImageSlot
                   imageKey={img.key}
@@ -116,8 +125,58 @@ export default function GalleryPage() {
         </Container>
       </section>
 
-      {/* Additional Project Photos */}
+      {/* Side-by-Side Before & After Pairs */}
       <section className="section-padding bg-surface">
+        <Container>
+          <SectionHeading
+            eyebrow="Side by Side"
+            heading="Before & After Comparisons"
+            subtitle="Swipe between our before and after photos to see the full transformation on each project."
+            align="center"
+          />
+
+          <div className="space-y-12">
+            {beforeAfterPairs.map((pair, i) => (
+              <div key={i}>
+                <h3 className="mb-4 text-center text-lg font-bold text-foreground">
+                  {pair.label}
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+                    <ImageSlot
+                      imageKey={pair.before}
+                      natural
+                      className="w-full"
+                      sizes="(max-width: 768px) 50vw, 40vw"
+                    />
+                    <div className="bg-red-50 px-4 py-2 text-center">
+                      <span className="text-xs font-bold uppercase tracking-wider text-red-600">
+                        Before
+                      </span>
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card">
+                    <ImageSlot
+                      imageKey={pair.after}
+                      natural
+                      className="w-full"
+                      sizes="(max-width: 768px) 50vw, 40vw"
+                    />
+                    <div className="bg-green-50 px-4 py-2 text-center">
+                      <span className="text-xs font-bold uppercase tracking-wider text-green-600">
+                        After
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Additional Project Photos */}
+      <section className="section-padding">
         <Container>
           <SectionHeading
             eyebrow="Project Photos"
@@ -125,7 +184,7 @@ export default function GalleryPage() {
             subtitle="Additional project photos from residential and commercial cleaning jobs across Lake County, IL."
             align="center"
           />
-          <div className="columns-2 gap-4 space-y-4 md:columns-3 lg:columns-4">
+          <div className="columns-2 gap-4 space-y-4 md:columns-3">
             {projectImages.map((key) => (
               <div
                 key={key}
@@ -135,7 +194,7 @@ export default function GalleryPage() {
                   imageKey={key}
                   natural
                   className="w-full"
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, 33vw"
                 />
               </div>
             ))}

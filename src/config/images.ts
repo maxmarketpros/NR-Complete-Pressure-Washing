@@ -353,6 +353,7 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
   },
 
   // ===== GALLERY IMAGES =====
+  // Composites (single images with B&A in one frame)
   "gallery-ba-1": {
     src: "/images/gallery-ba-1.jpg",
     alt: "Before and after paver cleaning showing dramatic color restoration in Mundelein, IL",
@@ -365,21 +366,65 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
     width: 1200,
     height: 468,
   },
-  "gallery-ba-5": {
-    src: "/images/gallery-ba-5.jpg",
-    alt: "Before and after brick paver restoration in Mundelein, IL",
+
+  // Before/After Pairs
+  "gallery-pair-1-before": {
+    src: "/images/gallery-pair-1-before.jpg",
+    alt: "Brick walkway before pressure washing — stained and dirty",
     width: 1200,
     height: 1600,
   },
-  "gallery-ba-6": {
-    src: "/images/gallery-ba-6.jpg",
-    alt: "Before and after entry stairway cleaning showing algae removal",
+  "gallery-pair-1-after": {
+    src: "/images/gallery-pair-1-after.jpg",
+    alt: "Brick walkway after pressure washing — clean and restored",
     width: 1200,
     height: 1600,
   },
-  "gallery-ba-7": {
-    src: "/images/gallery-ba-7.jpg",
-    alt: "Retaining wall cleaning progress showing half-cleaned transformation",
+  "gallery-pair-2-before": {
+    src: "/images/gallery-pair-2-before.jpg",
+    alt: "Paver walkway before cleaning — stained with dark buildup",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-2-after": {
+    src: "/images/gallery-pair-2-after.jpg",
+    alt: "Paver walkway after cleaning — colors restored",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-3-before": {
+    src: "/images/gallery-pair-3-before.jpg",
+    alt: "Brick masonry wall before cleaning — heavy algae and moss growth",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-3-after": {
+    src: "/images/gallery-pair-3-after.jpg",
+    alt: "Brick masonry wall after cleaning — algae removed, clean surface",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-4-before": {
+    src: "/images/gallery-pair-4-before.jpg",
+    alt: "Brick retaining wall before cleaning — covered in algae",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-4-after": {
+    src: "/images/gallery-pair-4-after.jpg",
+    alt: "Brick retaining wall after cleaning — restored to original appearance",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-5-before": {
+    src: "/images/gallery-pair-5-before.jpg",
+    alt: "Surface before pressure washing — discolored and stained",
+    width: 1200,
+    height: 1600,
+  },
+  "gallery-pair-5-after": {
+    src: "/images/gallery-pair-5-after.jpg",
+    alt: "Surface after pressure washing — clean and uniform",
     width: 1200,
     height: 1600,
   },
