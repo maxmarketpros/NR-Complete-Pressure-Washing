@@ -13,6 +13,8 @@ interface ImageSlotProps {
   sizes?: string;
   className?: string;
   fill?: boolean;
+  /** Render at natural aspect ratio (no cropping). Useful for galleries. */
+  natural?: boolean;
   overlayClassName?: string;
 }
 
@@ -87,6 +89,7 @@ export function ImageSlot({
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
   className,
   fill = false,
+  natural = false,
   overlayClassName,
 }: ImageSlotProps) {
   const config = imageManifest[imageKey];
@@ -105,6 +108,24 @@ export function ImageSlot({
         overlayClassName={overlayClassName}
         aspectRatio={aspectRatio}
       />
+    );
+  }
+
+  // Natural mode: render at intrinsic aspect ratio with no cropping
+  if (natural) {
+    return (
+      <div className={cn("overflow-hidden rounded-xl", className)}>
+        <Image
+          src={config.src}
+          alt={config.alt}
+          width={config.width}
+          height={config.height}
+          priority={priority}
+          sizes={sizes}
+          className="h-auto w-full"
+          onError={() => setHasError(true)}
+        />
+      </div>
     );
   }
 

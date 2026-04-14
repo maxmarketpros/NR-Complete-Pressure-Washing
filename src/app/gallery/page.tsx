@@ -15,6 +15,8 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/gallery",
 });
 
+// Before & after composites — only images that are actual B&A composites or
+// high-quality transformation shots. Low-res thumbnails removed.
 const beforeAfterImages = [
   {
     key: "gallery-ba-1",
@@ -25,24 +27,16 @@ const beforeAfterImages = [
     label: "House Washing — Window & Siding",
   },
   {
-    key: "gallery-ba-3",
-    label: "Driveway Pressure Washing",
-  },
-  {
-    key: "gallery-ba-4",
-    label: "House & Garage Exterior Cleaning",
-  },
-  {
     key: "gallery-ba-5",
     label: "Brick Paver Restoration",
   },
   {
-    key: "gallery-ba-6",
-    label: "Entry Stairway Cleaning",
-  },
-  {
     key: "gallery-ba-7",
     label: "Retaining Wall Cleaning",
+  },
+  {
+    key: "gallery-ba-6",
+    label: "Entry Stairway Cleaning",
   },
 ];
 
@@ -98,19 +92,18 @@ export default function GalleryPage() {
             subtitle="Every image below shows real results from NR Complete Pressure Washing projects. See the difference 30+ years of experience makes."
             align="center"
           />
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="columns-1 gap-8 space-y-8 md:columns-2">
             {beforeAfterImages.map((img) => (
               <div
                 key={img.key}
-                className="overflow-hidden rounded-2xl border border-border bg-white shadow-card"
+                className="break-inside-avoid overflow-hidden rounded-2xl border border-border bg-white shadow-card"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <ImageSlot
-                    imageKey={img.key}
-                    className="h-full w-full"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+                <ImageSlot
+                  imageKey={img.key}
+                  natural
+                  className="w-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="p-4">
                   <p className="text-sm font-semibold text-foreground">
                     {img.label}
@@ -132,16 +125,17 @@ export default function GalleryPage() {
             subtitle="Additional project photos from residential and commercial cleaning jobs across Lake County, IL."
             align="center"
           />
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="columns-2 gap-4 space-y-4 md:columns-3 lg:columns-4">
             {projectImages.map((key) => (
               <div
                 key={key}
-                className="aspect-square overflow-hidden rounded-xl border border-border"
+                className="break-inside-avoid overflow-hidden rounded-xl border border-border"
               >
                 <ImageSlot
                   imageKey={key}
-                  className="h-full w-full"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
+                  natural
+                  className="w-full"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
                 />
               </div>
             ))}
