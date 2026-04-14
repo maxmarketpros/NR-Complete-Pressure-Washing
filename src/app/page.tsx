@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
     type: "website",
   },
   alternates: {

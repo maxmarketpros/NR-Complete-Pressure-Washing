@@ -45,8 +45,22 @@ export function generateLocalBusinessSchema() {
       "@type": "City",
       name: area,
     })),
-    image: `${siteConfig.url}/images/logo.png`,
+    image: [
+      `${siteConfig.url}/images/logo.png`,
+      `${siteConfig.url}/images/og-image.webp`,
+    ],
     priceRange: "$$",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Pressure Washing Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pressure Washing" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "House Washing" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Concrete Cleaning" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paver Cleaning" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Deck & Patio Cleaning" } },
+      ],
+    },
     sameAs: Object.values(siteConfig.social).filter(Boolean),
   };
 }
