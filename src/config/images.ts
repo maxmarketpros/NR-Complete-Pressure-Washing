@@ -489,6 +489,108 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
     height: 1600,
   },
 
+  // ===== LOCATION PAGES =====
+  "location-mundelein-hero": {
+    src: "/images/hero-home.jpg",
+    alt: "Professional pressure washing service in Mundelein, IL",
+    width: 1920, height: 1080, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-mundelein-split": {
+    src: "/images/about-preview.jpg",
+    alt: "NR Complete Pressure Washing team serving Mundelein, IL",
+    width: 800, height: 1000, focalPoint: { x: 0.5, y: 0.3 },
+  },
+  "location-libertyville-hero": {
+    src: "/images/service-hw-hero.jpg",
+    alt: "Professional pressure washing in Libertyville, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-libertyville-split": {
+    src: "/images/service-hw.jpg",
+    alt: "House washing service in Libertyville, IL",
+    width: 800, height: 600,
+  },
+  "location-vernon-hills-hero": {
+    src: "/images/service-cc-hero.jpg",
+    alt: "Professional pressure washing in Vernon Hills, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-vernon-hills-split": {
+    src: "/images/service-cc.jpg",
+    alt: "Concrete cleaning service in Vernon Hills, IL",
+    width: 800, height: 600,
+  },
+  "location-lake-county-hero": {
+    src: "/images/service-pw-hero.jpg",
+    alt: "Professional pressure washing across Lake County, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-lake-county-split": {
+    src: "/images/service-pw.jpg",
+    alt: "Pressure washing service throughout Lake County, IL",
+    width: 800, height: 600,
+  },
+  "location-grayslake-hero": {
+    src: "/images/gallery-hero.jpg",
+    alt: "Professional pressure washing in Grayslake, IL",
+    width: 1920, height: 1080, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-grayslake-split": {
+    src: "/images/service-dp.jpg",
+    alt: "Deck and patio cleaning in Grayslake, IL",
+    width: 800, height: 600,
+  },
+  "location-wauconda-hero": {
+    src: "/images/service-rw-hero.jpg",
+    alt: "Professional pressure washing in Wauconda, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-wauconda-split": {
+    src: "/images/service-rw.jpg",
+    alt: "Retaining wall and hardscape cleaning in Wauconda, IL",
+    width: 800, height: 600,
+  },
+  "location-arlington-heights-hero": {
+    src: "/images/service-sc-hero.jpg",
+    alt: "Professional pressure washing in Arlington Heights, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-arlington-heights-split": {
+    src: "/images/service-sc.jpg",
+    alt: "Exterior cleaning service in Arlington Heights, IL",
+    width: 800, height: 600,
+  },
+  "location-lake-zurich-hero": {
+    src: "/images/contact-hero.jpg",
+    alt: "Professional pressure washing in Lake Zurich, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-lake-zurich-split": {
+    src: "/images/service-psl.jpg",
+    alt: "Paver sealing and restoration in Lake Zurich, IL",
+    width: 800, height: 600,
+  },
+  "location-buffalo-grove-hero": {
+    src: "/images/faq-hero.jpg",
+    alt: "Professional pressure washing in Buffalo Grove, IL",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-buffalo-grove-split": {
+    src: "/images/service-pc.jpg",
+    alt: "Paver cleaning service in Buffalo Grove, IL",
+    width: 800, height: 600,
+  },
+  "location-long-grove-hero": {
+    src: "/images/about-hero.jpg",
+    alt: "Premium pressure washing for Long Grove, IL estate properties",
+    width: 1920, height: 600, focalPoint: { x: 0.5, y: 0.4 },
+  },
+  "location-long-grove-split": {
+    src: "/images/service-cs.jpg",
+    alt: "Concrete sealing and property care in Long Grove, IL",
+    width: 800, height: 600,
+  },
+
   // ===== BRANDING =====
   logo: {
     src: "/images/logo.png",

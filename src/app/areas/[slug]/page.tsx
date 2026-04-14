@@ -2,20 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/PageHero";
-import { ServiceGrid } from "@/components/sections/ServiceGrid";
+import { SplitSection } from "@/components/sections/SplitSection";
+import { BenefitGrid } from "@/components/sections/BenefitGrid";
+import { ServiceScopeSection } from "@/components/sections/ServiceScopeSection";
+import { TopicCardGrid } from "@/components/sections/TopicCardGrid";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { TestimonialSection } from "@/components/sections/TestimonialSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { QuoteSection } from "@/components/sections/QuoteSection";
-import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
 import { locations } from "@/config/locations";
 import { businessConfig } from "@/config/business";
 import { generatePageMetadata } from "@/lib/metadata";
-import { generateBreadcrumbSchema } from "@/lib/structured-data";
-import { ArrowRight } from "lucide-react";
+import {
+  generateBreadcrumbSchema,
+  generateLocalBusinessSchema,
+} from "@/lib/structured-data";
+import { ArrowRight, Phone, MapPin } from "lucide-react";
 
 interface LocationPageProps {
   params: Promise<{ slug: string }>;
 }
+
+const ctaProps = {
+  primary: { label: "Get a Free Estimate", href: "/contact" },
+  secondary: {
+    label: `Call ${businessConfig.phone}`,
+    href: `tel:${businessConfig.phoneRaw}`,
+  },
+};
 
 export function generateStaticParams() {
   return locations.map((loc) => ({ slug: loc.slug }));
@@ -30,7 +47,7 @@ export async function generateMetadata({
 
   return generatePageMetadata({
     title: `Pressure Washing in ${location.fullName}`,
-    description: `Professional pressure washing services in ${location.fullName}. NR Complete Pressure Washing offers house washing, concrete cleaning, paver restoration, and more. 30+ years experience. Free estimates.`,
+    description: location.metaDescription,
     path: `/areas/${location.slug}`,
   });
 }
@@ -43,8 +60,16 @@ export default async function LocationPage({ params }: LocationPageProps) {
     notFound();
   }
 
+  // Build FAQ items for the FAQSection (custom items, not faqKeys)
+  const faqItems = location.faqs.map((faq, i) => ({
+    id: `faq-loc-${location.slug}-${i}`,
+    question: faq.question,
+    answer: faq.answer,
+  }));
+
   return (
     <>
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -60,108 +85,151 @@ export default async function LocationPage({ params }: LocationPageProps) {
           ),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            ...generateLocalBusinessSchema(),
+            areaServed: {
+              "@type": "City",
+              name: location.name,
+              addressRegion: location.state,
+            },
+          }),
+        }}
+      />
 
+      {/* 1. Page Hero */}
       <PageHero
         heading={`Pressure Washing in ${location.fullName}`}
-        subtitle={location.description}
+        subtitle={location.heroSubtitle}
         imageKey={location.heroImage}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Service Areas", href: "/areas" },
           { label: location.fullName },
         ]}
-        primaryCta={{ label: "Get a Free Estimate", href: "/contact" }}
-        secondaryCta={{
-          label: `Call ${businessConfig.phone}`,
-          href: `tel:${businessConfig.phoneRaw}`,
-        }}
+        primaryCta={ctaProps.primary}
+        secondaryCta={ctaProps.secondary}
       />
 
-      {/* Intro */}
-      <section className="section-padding">
-        <Container>
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading
-              eyebrow={location.fullName}
-              heading={`Professional Pressure Washing Services in ${location.fullName}`}
-            />
-            <p className="mb-6 text-base leading-relaxed text-muted md:text-lg">
-              NR Complete Pressure Washing is proud to serve {location.name},{" "}
-              {location.state} with a full range of professional exterior
-              cleaning services. With over 30 years of experience, our team
-              delivers expert pressure washing, soft wash house cleaning,
-              concrete restoration, paver maintenance, and hardscape cleaning to
-              homeowners and business owners throughout{" "}
-              {location.name} and surrounding areas.
-            </p>
-            <p className="text-base leading-relaxed text-muted md:text-lg">
-              Whether you need a driveway cleaned, your home&apos;s siding
-              washed, pavers restored, or any other exterior surface
-              professionally cleaned, NR Complete Pressure Washing has the
-              expertise and equipment to get the job done right.{" "}
-              <a
-                href="tel:+19412809119"
-                className="font-semibold text-primary-600 hover:underline"
-              >
-                Call (941) 280-9119
-              </a>{" "}
-              for a free estimate.
-            </p>
-          </div>
-        </Container>
-      </section>
+      {/* 2. Overview — SplitSection */}
+      <SplitSection
+        imageKey={location.splitImage}
+        imagePosition="right"
+        imageAspect="4/3"
+      >
+        <SectionHeading
+          eyebrow={location.fullName}
+          heading={`Professional Pressure Washing in ${location.fullName}`}
+        />
+        {location.overview.map((p, i) => (
+          <p
+            key={i}
+            className="mb-4 text-base leading-relaxed text-muted md:text-lg"
+          >
+            {p}
+          </p>
+        ))}
+        <div className="mt-6 flex flex-wrap gap-4">
+          <Button
+            href="/contact"
+            icon={<ArrowRight className="h-5 w-5" />}
+          >
+            Get a Free Estimate
+          </Button>
+          <Button
+            href={`tel:${businessConfig.phoneRaw}`}
+            variant="outline"
+            icon={<Phone className="h-5 w-5" />}
+          >
+            {businessConfig.phone}
+          </Button>
+        </div>
+      </SplitSection>
 
-      {/* Services Available */}
-      <ServiceGrid
-        eyebrow="Available Services"
-        heading={`Our Services in ${location.fullName}`}
-        subtitle={`All of our professional pressure washing services are available to ${location.name} residents and businesses.`}
+      {/* 3. Why Choose Us — BenefitGrid */}
+      <BenefitGrid
+        benefits={location.whyChooseUs}
+        eyebrow="Why Choose Us"
+        heading={`Why ${location.name} Chooses NR Complete Pressure Washing`}
+        subtitle={`Here is what makes us the trusted pressure washing provider for homeowners and businesses in ${location.fullName}.`}
+        bgColor="surface"
+        primaryCta={ctaProps.primary}
+        secondaryCta={ctaProps.secondary}
+      />
+
+      {/* 4. Services Available — ServiceScopeSection */}
+      <ServiceScopeSection
+        items={location.services}
+        eyebrow="Our Services"
+        heading={`Pressure Washing Services Available in ${location.fullName}`}
+        subtitle={`NR Complete Pressure Washing offers the full range of professional exterior cleaning services to ${location.name} residents and businesses.`}
+        primaryCta={ctaProps.primary}
+        secondaryCta={ctaProps.secondary}
+      />
+
+      {/* 5. Local Expertise — TopicCardGrid */}
+      <TopicCardGrid
+        eyebrow={location.localExpertise.eyebrow}
+        heading={location.localExpertise.heading}
+        subtitle={location.localExpertise.subtitle}
+        items={location.localExpertise.items}
+        bgColor="surface"
+        primaryCta={ctaProps.primary}
+        secondaryCta={ctaProps.secondary}
+      />
+
+      {/* 6. FAQs — location-specific */}
+      <FAQSection
+        eyebrow={`${location.name} Questions`}
+        heading={`Pressure Washing FAQ for ${location.fullName}`}
+        subtitle={`Answers to common questions about pressure washing services in ${location.fullName}.`}
+        items={faqItems}
+      />
+
+      {/* 7. Testimonials */}
+      <TestimonialSection
+        eyebrow="Client Reviews"
+        heading="What Our Clients Say"
+        subtitle={`Hear from property owners who trust NR Complete Pressure Washing for their exterior cleaning needs.`}
         bgColor="surface"
       />
 
-      {/* Other Areas Link */}
+      {/* 8. Other Service Areas */}
       <section className="section-padding-sm">
         <Container>
           <div className="text-center">
-            <p className="text-sm text-muted">
-              We also serve{" "}
+            <h3 className="mb-4 text-lg font-bold text-foreground">
+              We Also Serve These Nearby Areas
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-3">
               {locations
                 .filter((l) => l.slug !== location.slug)
-                .slice(0, 5)
-                .map((l, i, arr) => (
-                  <span key={l.slug}>
-                    <Link
-                      href={`/areas/${l.slug}`}
-                      className="text-primary-600 hover:underline"
-                    >
-                      {l.fullName}
-                    </Link>
-                    {i < arr.length - 1 ? ", " : ""}
-                  </span>
+                .map((l) => (
+                  <Link
+                    key={l.slug}
+                    href={`/areas/${l.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-foreground-light transition-colors hover:border-primary-300 hover:text-primary-600"
+                  >
+                    <MapPin className="h-3.5 w-3.5" />
+                    {l.fullName}
+                  </Link>
                 ))}
-              , and more.{" "}
-              <Link
-                href="/areas"
-                className="inline-flex items-center gap-1 font-medium text-primary-600 hover:underline"
-              >
-                View all service areas
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </p>
+            </div>
           </div>
         </Container>
       </section>
 
+      {/* 9. CTA */}
       <CTASection
-        heading={`Ready for Pressure Washing in ${location.fullName}?`}
-        text={`Contact NR Complete Pressure Washing today for a free estimate on any exterior cleaning service in ${location.name}, ${location.state}.`}
-        primaryCta={{ label: "Get a Free Estimate", href: "/contact" }}
-        secondaryCta={{
-          label: `Call ${businessConfig.phone}`,
-          href: `tel:${businessConfig.phoneRaw}`,
-        }}
+        heading={location.ctaHeading}
+        text={location.ctaText}
+        primaryCta={ctaProps.primary}
+        secondaryCta={ctaProps.secondary}
       />
 
+      {/* 10. Quote Form */}
       <QuoteSection />
     </>
   );
