@@ -119,24 +119,28 @@ for (const [dest, src] of Object.entries(imageMap)) {
     if (ext === '.png' && dest === 'logo.png') {
       // Logo: resize to reasonable web size, keep PNG
       await sharp(srcPath)
+        .rotate() // auto-orient from EXIF
         .resize(400, null, { withoutEnlargement: true })
         .png({ quality: 90 })
         .toFile(destPath);
     } else if (dest.includes('hero') || dest === 'og-image.jpg') {
       // Hero/OG images: larger size
       await sharp(srcPath)
+        .rotate() // auto-orient from EXIF
         .resize(1920, null, { withoutEnlargement: true })
         .jpeg({ quality: 80, mozjpeg: true })
         .toFile(destPath);
     } else if (dest.startsWith('service-') && !dest.includes('hero') && !dest.includes('detail')) {
       // Service card images: medium
       await sharp(srcPath)
+        .rotate() // auto-orient from EXIF
         .resize(800, null, { withoutEnlargement: true })
         .jpeg({ quality: 80, mozjpeg: true })
         .toFile(destPath);
     } else {
       // Everything else: reasonable web size
       await sharp(srcPath)
+        .rotate() // auto-orient from EXIF
         .resize(1200, null, { withoutEnlargement: true })
         .jpeg({ quality: 80, mozjpeg: true })
         .toFile(destPath);
