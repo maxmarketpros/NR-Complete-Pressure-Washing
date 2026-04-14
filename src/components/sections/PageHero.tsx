@@ -32,7 +32,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative flex items-center pt-20",
+        "relative flex items-center pt-20 overflow-hidden",
         "min-h-[320px] md:min-h-[380px]",
         className
       )}
