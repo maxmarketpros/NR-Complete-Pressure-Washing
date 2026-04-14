@@ -10,7 +10,7 @@ interface QuoteSectionProps {
 
 export function QuoteSection({ id }: QuoteSectionProps) {
   return (
-    <section id={id} className="section-padding bg-surface-dark">
+    <section id={id} className="section-padding bg-surface-dark overflow-hidden">
       <Container>
         <SectionHeading
           eyebrow="Get a Quote"
@@ -62,7 +62,7 @@ export function QuoteSection({ id }: QuoteSectionProps) {
                     <p className="text-xs font-medium uppercase tracking-wider text-muted">
                       Email
                     </p>
-                    <p className="font-semibold">{businessConfig.email}</p>
+                    <p className="font-semibold break-all">{businessConfig.email}</p>
                   </div>
                 </a>
 

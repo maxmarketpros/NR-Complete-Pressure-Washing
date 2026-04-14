@@ -52,8 +52,8 @@ export const businessConfig = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47241.36539505166!2d-88.0033286!3d42.266027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45117625e73411fd%3A0xb5ce4e7c3f1e7e3a!2sNR%20Complete%20Pressure%20Washing!5e0!3m2!1sen!2sus!4v1776191292010!5m2!1sen!2sus",
 
   // ===== FORM EMBED =====
-  formEmbedUrl: "",
-  formEmbedHeight: "600px",
+  formEmbedUrl: "https://api.leadconnectorhq.com/widget/form/d1E6WGScJcNFJbpSbxb3",
+  formEmbedHeight: "695px",
 
   coordinates: { lat: 42.2631, lng: -87.984 },
   yearEstablished: 1994,

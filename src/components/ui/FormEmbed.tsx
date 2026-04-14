@@ -1,6 +1,7 @@
 import { FileText } from "lucide-react";
 import { businessConfig } from "@/config/business";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 interface FormEmbedProps {
   className?: string;
@@ -8,7 +9,7 @@ interface FormEmbedProps {
 }
 
 // Reusable form embed component.
-// Renders the client's iframe form if configured in business.ts,
+// Renders the GoHighLevel form iframe if configured in business.ts,
 // otherwise shows a styled placeholder indicating where the form will go.
 
 export function FormEmbed({ className, height }: FormEmbedProps) {
@@ -17,13 +18,31 @@ export function FormEmbed({ className, height }: FormEmbedProps) {
 
   if (embedUrl) {
     return (
-      <iframe
-        src={embedUrl}
-        title="Request a quote"
-        className={cn("w-full border-0 rounded-xl", className)}
-        style={{ height: embedHeight }}
-        loading="lazy"
-      />
+      <div className={cn("w-full overflow-hidden", className)}>
+        <iframe
+          src={embedUrl}
+          title="Request a quote"
+          id="inline-d1E6WGScJcNFJbpSbxb3"
+          className="w-full border-0 rounded-xl"
+          style={{ height: embedHeight }}
+          loading="lazy"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="WebSite Form Template"
+          data-height="695"
+          data-layout-iframe-id="inline-d1E6WGScJcNFJbpSbxb3"
+          data-form-id="d1E6WGScJcNFJbpSbxb3"
+        />
+        <Script
+          src="https://link.msgsndr.com/js/form_embed.js"
+          strategy="lazyOnload"
+        />
+      </div>
     );
   }
 
