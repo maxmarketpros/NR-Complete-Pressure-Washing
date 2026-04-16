@@ -25,7 +25,7 @@ export function FormEmbed({ className, height }: FormEmbedProps) {
           id="inline-d1E6WGScJcNFJbpSbxb3"
           className="w-full border-0 rounded-xl"
           style={{ height: embedHeight }}
-          loading="lazy"
+          loading="eager"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
           data-trigger-value=""
@@ -40,7 +40,7 @@ export function FormEmbed({ className, height }: FormEmbedProps) {
         />
         <Script
           src="https://link.msgsndr.com/js/form_embed.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
       </div>
     );
