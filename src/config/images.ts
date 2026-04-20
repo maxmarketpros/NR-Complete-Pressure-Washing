@@ -5,15 +5,15 @@ export const imageManifest: Record<string, ImageSlotConfig> = {
   "hero-home": {
     src: "/images/hero-home.webp",
     alt: "Professional pressure washing service in Mundelein, IL — NR Complete Pressure Washing",
-    width: 1920,
-    height: 1080,
+    width: 1600,
+    height: 900,
     focalPoint: { x: 0.5, y: 0.4 },
   },
   "about-preview": {
     src: "/images/about-preview.webp",
     alt: "NR Complete Pressure Washing team serving Mundelein, IL",
-    width: 800,
-    height: 1000,
+    width: 1000,
+    height: 1333,
     focalPoint: { x: 0.5, y: 0.3 },
   },
   "standards-feature": {
